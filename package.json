@@ -19,7 +19,10 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "@types/react-helmet": "^6.0.0",
+    "gatsby-alias-imports": "^1.0.4",
+    "prettier": "2.0.5",
+    "typescript": "^3.9.7"
   },
   "keywords": [
     "gatsby"
