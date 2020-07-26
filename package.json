@@ -34,7 +34,8 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "deploy": "gatsby build && gh-pages -d public",
+    "clean:gh-pages": "node ./node_modules/gh-pages/bin/gh-pages-clean.js",
+    "deploy": "gatsby build && gh-pages -b master -d public",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",

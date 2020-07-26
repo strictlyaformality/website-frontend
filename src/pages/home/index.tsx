@@ -9,7 +9,7 @@ const HomePage: React.FC = () => (
   <Layout>
     <SEO title="Home" />
     <div className="sf-home-content">
-      ¯\_(ツ)_/¯ D:
+      ¯\_(ツ)_/¯
     </div>
   </Layout>
 )
