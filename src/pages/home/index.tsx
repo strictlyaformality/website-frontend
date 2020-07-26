@@ -5,7 +5,7 @@ import SEO from "@components/SEO"
 
 import "./home.scss"
 
-const IndexPage: React.FC = () => (
+const HomePage: React.FC = () => (
   <Layout>
     <SEO title="Home" />
     <div className="sf-home-content">
@@ -14,4 +14,4 @@ const IndexPage: React.FC = () => (
   </Layout>
 )
 
-export default IndexPage
+export default HomePage
