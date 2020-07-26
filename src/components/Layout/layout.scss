@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Sarala');
+
+@import 'styles';
+@import 'styles/mixins';
+@import 'styles/variables';
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.sf-layout {
+  @include mint-cream-background;
+  @include dark-liver-font;
+
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  font: 16px sans-serif;
+
+  & header,
+  & main,
+  & footer {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.sf-layout-header {
+  @include russian-green-background;
+  @include mint-cream-font;
+
+  display: flex;
+  align-items: center;
+
+  box-shadow: $dark-liver 0px -2px 5px;
+
+  & .sf-layout-header-brand {
+    font-family: 'Sarala';
+    text-shadow: $dark-liver -3px -2px 1px;
+  }
+
+  & .sf-layout-header-github {
+    margin-left: auto;
+    text-shadow: $dark-liver 3px -2px 1px;
+  }
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.sf-layout-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Sarala';
+  font-size: 0.75rem;
+  box-shadow: $dark-liver 0px 2px 5px;
+
+  & .sf-copyright-icon {
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}

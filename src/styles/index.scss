@@ -1,0 +1,9 @@
+@import 'styles/mixins';
+
+.primary-font-color {
+    @include dark-liver-font;
+}
+
+.secondary-font-color {
+    @include mint-cream-font;
+}

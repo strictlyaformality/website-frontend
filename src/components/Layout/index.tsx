@@ -5,13 +5,22 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { useEffect, useState } from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
-import Header from "@components/Header"
-import "./layout.css"
+import "minireset.css"
+import "@fortawesome/fontawesome-free/css/all.css"
+import "./layout.scss"
+
+const iconClasses = [
+  "fa-bread-slice",
+  "fa-heart",
+  "fa-brain"
+]
 
 const Layout: React.FC = ({ children }) => {
+  const [iconIndex, setIconIndex] = useState<number>(0);
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -22,24 +31,35 @@ const Layout: React.FC = ({ children }) => {
     }
   `)
 
+  useEffect(() => {
+    const nextIndex = Math.floor(Math.random() * iconClasses.length);
+    setIconIndex(nextIndex)
+  })
+
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <div className="sf-layout">
+      <header className="sf-layout-header">
+        <h1 className="sf-layout-header-brand">
+          <Link to="/">
+            {data.site.siteMetadata.title}
+          </Link>
+        </h1>
+        <h1 className="sf-layout-header-github">
+          <a target="_blank" href="https://github.com/strictlyaformality">
+            <i className="fab fa-github-alt"></i>
+          </a>
+        </h1>
+      </header>
+      <main>{children}</main>
+      <footer className="sf-layout-footer">
+        Jonny Kreell
+        <span className="fa-stack sf-copyright-icon">
+          <i className={`fas ${iconClasses[iconIndex]??""} fa-stack-2x`}></i>
+          <i className="far fa-copyright fa-stack-1x secondary-font-color"></i>
+        </span>
+        2020 - {new Date().getFullYear()}
+      </footer>
+    </div>
   )
 }
 
