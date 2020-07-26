@@ -1,41 +1,16 @@
 @import 'variables';
 
-@mixin background-color($color) {
-    background-color: $color;
+@mixin color-classes($name, $color) {
+    .#{$name}-background {
+        background-color: $color;
+    }
+
+    .#{$name}-font {
+        color: $color;
+    }
 }
 
-@mixin font-color($color) {
-    color: $color;
-}
-
-// russian green
-@mixin russian-green-background {
-    @include background-color($russian-green);
-}
-@mixin russian-green-font {
-    @include font-color($russian-green);
-}
-
-// dark liver
-@mixin dark-liver-background {
-    @include background-color($dark-liver);
-}
-@mixin dark-liver-font {
-    @include font-color($dark-liver);
-}
-
-// mango tango
-@mixin mango-tango-background {
-    @include background-color($mango-tango);
-}
-@mixin mango-tango-font {
-    @include font-color($mango-tango);
-}
-
-// mint cream
-@mixin mint-cream-background {
-    @include background-color($mint-cream);
-}
-@mixin mint-cream-font {
-    @include font-color($mint-cream);
-}
+@include color-classes('primary', $primary-color);
+@include color-classes('secondary', $secondary-color);
+@include color-classes('white', $white);
+@include color-classes('grey', $grey);
