@@ -5,9 +5,7 @@
     flex: 1 1 auto;
     scroll-behavior: smooth;
 
-    .sf-home-content__anchored {
-        & > & {
-            height: 100%;
-        }
+    .sf-home-content__anchored > .sf-home-content__anchored {
+        height: 1000px;
     }
 }
