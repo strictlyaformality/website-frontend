@@ -1,9 +1,36 @@
 @import 'styles/mixins';
+@import 'styles/variables';
 
-.primary-font-color {
-    @include dark-liver-font;
+@include color-classes('primary', $primary-color);
+@include color-classes('secondary', $secondary-color);
+@include color-classes('white', $white);
+@include color-classes('grey', $grey);
+
+@include display-flex('row');
+@include display-flex('column');
+
+* {
+    box-sizing: border-box;
 }
 
-.secondary-font-color {
-    @include mint-cream-font;
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-color;
+}
+
+a:hover {
+    color: darken($primary-color, 20%);
+}
+
+.sf-container {
+    width: $content-width;
+    margin: 0 auto;
 }

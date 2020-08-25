@@ -1,41 +1,22 @@
 @import 'variables';
 
-@mixin background-color($color) {
-    background-color: $color;
+@mixin color-classes($name, $color) {
+    .#{$name}-background {
+        background-color: $color;
+    }
+
+    .#{$name}-font {
+        color: $color;
+    }
 }
 
-@mixin font-color($color) {
-    color: $color;
-}
+@mixin display-flex($direction: row) {
+    .sf-flex-#{$direction} {
+        display: flex;
+        flex-direction: $direction;
+    }
 
-// russian green
-@mixin russian-green-background {
-    @include background-color($russian-green);
-}
-@mixin russian-green-font {
-    @include font-color($russian-green);
-}
-
-// dark liver
-@mixin dark-liver-background {
-    @include background-color($dark-liver);
-}
-@mixin dark-liver-font {
-    @include font-color($dark-liver);
-}
-
-// mango tango
-@mixin mango-tango-background {
-    @include background-color($mango-tango);
-}
-@mixin mango-tango-font {
-    @include font-color($mango-tango);
-}
-
-// mint cream
-@mixin mint-cream-background {
-    @include background-color($mint-cream);
-}
-@mixin mint-cream-font {
-    @include font-color($mint-cream);
+    .sf-flex-#{$direction}--align-center {
+        align-items: center;
+    }
 }

@@ -34,7 +34,8 @@ module.exports = {
           '@components': `src/components`,
           '@pages': `src/pages`,
           '@images': `src/images`,
-          '@styles': `src/styles`
+          '@styles': `src/styles`,
+          '@hooks': `src/hooks`
         },
         rootFolder: `src`
       }

@@ -6,6 +6,9 @@ import SEO from "@components/SEO";
 const ResumePage: React.FC = () => (
     <Layout>
         <SEO title="Resume" />
+        <div style={{ fontSize: "15rem", display: "grid", placeItems: "center", height: "100%" }}>
+            ¯\_(ツ)_/¯
+        </div>
     </Layout>
 )
 
