@@ -1,41 +1,13 @@
 @import 'styles/variables';
 
 .sf-home-content {
-    height: 100%;
-    width: 100%;
+    overflow-y: hidden;
+    flex: 1 1 auto;
+    scroll-behavior: smooth;
 
-    display: grid;
-    place-items: center;
-
-    font-size: 15rem;
-}
-
-@media (max-width: 1200px) and (min-width: 1025px) {
-    .sf-home-content {
-        font-size: 10rem;
-    }
-}
-
-@media (max-width: 1024px) and (min-width: 769px) {
-    .sf-home-content {
-        font-size: 6rem;
-    }
-}
-
-@media (max-width: 768px) and (min-width: 481px) {
-    .sf-home-content {
-        font-size: 5rem;
-    }
-}
-
-@media (max-width: 480px) and (min-width: 321px) {
-    .sf-home-content {
-        font-size: 4rem;
-    }
-}
-
-@media (max-width: 320px) {
-    .sf-home-content {
-        font-size: 3rem;
+    .sf-home-content__anchored {
+        & > & {
+            height: 100%;
+        }
     }
 }

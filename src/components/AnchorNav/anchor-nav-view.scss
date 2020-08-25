@@ -1,0 +1,30 @@
+@import 'styles/variables';
+
+.anchor-nav-view {
+    display: flex;
+
+    .anchor-nav-view__nav {
+        overflow-y: auto;
+        width: 10%;
+        padding: 1em;
+        margin-right: 1em;
+
+        // border-right: 1px solid $grey;
+        background-color: fade-out($grey, 0.85);
+    
+        .anchor-nav-view__node {
+            padding-top: 1em;
+
+            & > .anchor-nav-view__node {
+                padding-left: 0.75em;
+            }
+        }
+    }
+    
+    .anchor-nav-view__view {
+        flex: 1;
+        overflow: auto;
+        
+        scroll-behavior: smooth;
+    }
+}

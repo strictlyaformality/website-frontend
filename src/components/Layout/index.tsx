@@ -32,12 +32,14 @@ const Layout: React.FC = ({ children }) => {
   return (
     <div className="sf-layout">
       <header className="sf-layout-header">
-        <Link className="sf-layout-header-brand" to="/">
-          {data.site.siteMetadata.title}
-        </Link>
-        <a className="sf-layout-header-github" target="_blank" href="https://github.com/strictlyaformality">
-          <i className="fab fa-github-alt"></i>
-        </a>
+        <div className="sf-container sf-flex-row sf-flex-row--align-center">
+          <Link className="sf-layout-header-brand" to="/">
+            {data.site.siteMetadata.title}
+          </Link>
+          <a className="sf-layout-header-github" target="_blank" href="https://github.com/strictlyaformality">
+            <i className="fab fa-github"></i>
+          </a>
+        </div>
       </header>
       <main>{children}</main>
       <footer className="sf-layout-footer">

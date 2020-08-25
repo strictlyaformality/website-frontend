@@ -4,14 +4,6 @@
 @import 'styles/mixins';
 @import 'styles/variables';
 
-h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
 .sf-layout {
   @extend .white-background;
   @extend .grey-font;
@@ -19,23 +11,30 @@ h2 {
   height: 100vh;
   width: 100vw;
 
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
 
   font: 16px sans-serif;
 
-  & header,
+  & header {
+    padding: 0.25rem 0;
+  }
+
   & footer {
-    padding: 0.5rem 1rem;
+    padding: 1em 0;
+  }
+
+  & main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
   }
 }
 
 .sf-layout-header {
   @extend .primary-background;
-  @extend .primary-font;
-
-  display: flex;
-  align-items: center;
+  @extend .white-font;
 
   box-shadow: $grey 0px -2px 5px;
 
@@ -44,12 +43,11 @@ h2 {
   & .sf-layout-header-brand {
     @extend .primary-font;
     font-family: 'Sarala';
-    text-shadow: $grey -3px -2px 1px;
+    text-shadow: $white -2px 2px 1px;
   }
 
   & .sf-layout-header-github {
     margin-left: auto;
-    text-shadow: $grey 3px -2px 1px;
   }
 
   & a {
