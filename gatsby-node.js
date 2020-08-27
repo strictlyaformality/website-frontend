@@ -1,7 +1,15 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+module.exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions;
 
-// You can delete this file if you're not using it
+    const typeDefs = `
+        type StrapiJob implements Node {
+            endDate: Date
+        }
+
+        type StrapiEducation implements Node {
+            endDate: Date
+        }
+    `
+
+    createTypes(typeDefs);
+}

@@ -11,7 +11,7 @@ export type AnchorNavNode = {
 
 function getAnchoredChildren(dataAttribute: string, root: HTMLElement, el: HTMLElement): AnchorNavNode {
     // get the node label from its data attribute
-    const label = el.getAttribute(dataAttribute)??"";
+    const label = el.getAttribute(dataAttribute) ?? "";
     // determine if the current node is the root based on the presence of a label (data attribute)
     const isRoot = !label;
     // get top offset of the root to compute current node offset
@@ -28,8 +28,8 @@ function getAnchoredChildren(dataAttribute: string, root: HTMLElement, el: HTMLE
         scrollTo: () => root.scrollTop = offset,
         children: []
     };
-    
-    
+
+
     el  // get all direct children in the current scope
         .querySelectorAll(`:scope > [id][${dataAttribute}]`)
         // construct nav nodes from the selected elements

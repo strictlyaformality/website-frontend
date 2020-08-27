@@ -8,7 +8,7 @@ import './anchor-nav-view.scss';
 export { default as Anchored, dataAttribute } from './Anchored';
 export { default as AnchorNav } from './AnchorNav';
 
-type Props = Omit<AnchorNavProps, "node"> & { 
+type Props = Omit<AnchorNavProps, "node"> & {
     containerClassName?: string,
     viewClassName?: string
 }
@@ -22,7 +22,7 @@ const AnchorNavView: React.FC<Props> = props => {
             <AnchorNav
                 rootClassName={combineClassNames('anchor-nav-view__nav', props.rootClassName)}
                 nodeClassName={combineClassNames('anchor-nav-view__node', props.nodeClassName)}
-                node={tree} 
+                node={tree}
             />
         }
         <div ref={container} className={combineClassNames('anchor-nav-view__view', props.viewClassName)}>
