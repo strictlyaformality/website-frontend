@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnchorNavNode } from '@hooks/useAnchorNav';
+import { AnchorNavNode } from 'hooks/useAnchorNav';
 
 export type Props = {
     node: AnchorNavNode,

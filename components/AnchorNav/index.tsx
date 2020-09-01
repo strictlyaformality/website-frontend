@@ -1,8 +1,8 @@
 import React from 'react';
 import AnchorNav, { Props as AnchorNavProps } from './AnchorNav';
-import useAnchorNav from '@hooks/useAnchorNav';
+import useAnchorNav from 'hooks/useAnchorNav';
 import { dataAttribute } from './Anchored';
-import { combineClassNames } from '@styles/utilities';
+import { combineClassNames } from 'styles/utilities';
 import './anchor-nav-view.scss';
 
 export { default as Anchored, dataAttribute } from './Anchored';
