@@ -33,7 +33,11 @@ const Layout: React.FC<Props> = props =>
             {props.children}
         </main>
         <footer className='layout-root__footer'>
-            THIS IS A FOOOOOT
+            <div className='sf-container layout-root__footer-text'>
+                2020 - {new Date().getFullYear()} 
+                <i className='fas fa-2x fa-crow layout-root__footer-icon'></i> 
+                Jonny Kreell
+            </div>
         </footer>
     </div>
 

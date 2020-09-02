@@ -1,29 +1,3 @@
-@keyframes moving-gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-
-    50% {
-        background-position: 100% 100%;
-    }
-
-    100% {
-        background-position: 0% 0%;
-    }
-
-    /* 50% {
-        background-position: 50% 50%;
-    }
-
-    75% {
-        background-position: -50% 50%;
-    }
-
-    100% {
-        background-position: -50% -50%;
-    } */
-}
-
 .layout-root {
     display: flex;
     flex-direction: column;
@@ -34,8 +8,11 @@
 }
 
 .layout-root__header {
-    background-color: var(--darker-grey);
-    color: var(--darker-grey);
+    background-color: var(--darkest-grey);
+    color: var(--darkest-grey);
+    box-shadow: 0px 1px 4px var(--black);
+    
+    z-index: 0;
 }
 
 .layout-root__social-links {
@@ -46,18 +23,8 @@
 
 .layout-root__social-link {
     display: block;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
-
-/* .layout-root__social-link:hover {
-    animation: moving-gradient 2s ease-in-out infinite;
-    background-image: linear-gradient(45deg, var(--white), var(--secondary-color) 80%);
-    background-size: 200%;
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-} */
 
 .layout-root__brand {
     display: flex;
@@ -68,7 +35,7 @@
 }
 
 .layout-root__brand-text {
-    background-image: linear-gradient(45deg, var(--white), var(--secondary-color) 90%);
+    background-image: linear-gradient(60deg, var(--lightest-grey), var(--primary-color) 95%);
     background-size: 100%;
     background-clip: text;
     color: transparent;
@@ -78,8 +45,29 @@
 
 .layout-root__main {
     flex: 1;
+    overflow-y: auto;
 }
 
 .layout-root__footer {
-    background-color: var(--darker-grey);
+    padding: 1em 0;
+
+    font-size: 0.75rem;
+
+    background-color: var(--darkest-grey);
+    color: var(--lightest-grey);
+    box-shadow: 0px -1px 4px var(--black);
+
+    z-index: 0;
+}
+
+.layout-root__footer-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layout-root__footer-icon {
+    margin: 0 1em;
+
+    color: var(--primary-color);
 }
