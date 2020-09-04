@@ -19,7 +19,7 @@ const Home: React.FC<HomeProps> = props =>
 export default Home;
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-    const urlTemplate = (endpoint: string) => `${process.env.NEXT_PUBLIC_API_BASE_URL}/${endpoint}`;
+    const urlTemplate = (endpoint: string) => `${process.env.API_BASE_URL}/${endpoint}`;
     const [educationRes, jobRes, skillRes] = await Promise.all([
         fetch(urlTemplate('educations')),
         fetch(urlTemplate('jobs')),
