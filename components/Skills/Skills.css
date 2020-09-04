@@ -11,6 +11,8 @@
 .skills__category-name {
     display: flex;
     align-items: center;
+    
+    font-weight: normal;
     color: var(--lightest-grey)
 }
 
@@ -36,8 +38,8 @@
 .skills__skill-item {
     display: inline-block;
     width: 10vw;
+    min-width: 6rem;
     padding: 1em;
-    /* background-color: var(--lightest-grey); */
 }
 
 .skills__skill-image {

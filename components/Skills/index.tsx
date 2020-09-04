@@ -11,7 +11,11 @@ type Props = {
 
 const Skills: React.FC<Props> = ({ categories }) =>
     <div className='skills'>
-        {categories.map(category => <SkillCategory key={category.id} category={category} />)}
+        {
+            categories
+                .sort((a, b) => a.sortOrder - b.sortOrder)
+                .map(category => <SkillCategory key={category.id} category={category} />)
+        }
     </div>
 
 export default Skills;

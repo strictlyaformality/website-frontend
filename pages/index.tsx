@@ -11,12 +11,10 @@ type HomeProps = {
     jobs: any[]
 }
 
-const Home: React.FC<HomeProps> = props => {
-    console.log(props);
-    return <Layout title="Home">
+const Home: React.FC<HomeProps> = props =>
+    <Layout title="Home">
         <Skills categories={props.skills} />
     </Layout>
-}
 
 export default Home;
 

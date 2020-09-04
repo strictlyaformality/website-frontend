@@ -1,7 +1,8 @@
 export type Skill = {
     id: number,
     name: string,
-    image: Skill.Image
+    imageUrl: string,
+    sortOrder: number
 }
 
 export namespace Skill {
@@ -9,17 +10,7 @@ export namespace Skill {
     export type Category = {
         id: number,
         name: string,
+        sortOrder: number,
         skills: Skill[]
-    }
-
-    export type Image = {
-        id: number,
-        url: string,
-        width: number,
-        height: number
-    }
-
-    export function getImageUrl(image: Image): string {
-        return `${process.env.NEXT_PUBLIC_API_BASE_URL}${image.url}`;
     }
 }

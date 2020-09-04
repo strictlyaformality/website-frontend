@@ -23,6 +23,7 @@
 
 .layout-root__social-link {
     display: block;
+    font-family: sans-serif;
     color: var(--primary-color);
 }
 
@@ -31,21 +32,20 @@
     align-items: center;
     justify-content: center;
 
-    font-family: 'Arvo', serif;
+    font-family: var(--serif-font);
 }
 
 .layout-root__brand-text {
-    background-image: linear-gradient(60deg, var(--lightest-grey), var(--primary-color) 95%);
-    background-size: 100%;
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
+    letter-spacing: 1ch;
+    color: var(--primary-color);
+    font-weight: normal;
 }
 
 .layout-root__main {
     flex: 1;
     overflow-y: auto;
+
+    font-family: var(--sans-serif-font);
 }
 
 .layout-root__footer {
