@@ -1,44 +1,48 @@
 .skills {
     display: flex;
     flex-direction: column;
-    padding: 0 1em;
-}
-
-.skills__category {
     
+    padding: 0 2em;
 }
 
 .skills__category-name {
     display: flex;
     align-items: center;
-    
+
     font-weight: normal;
     color: var(--lightest-grey)
 }
 
 .skills__category-name::after {
     content: '';
-    flex: 1;
-    margin-left: 0.25em;
-    height: 0.1em;
-    border-radius: 100%;
+
     display: inline-block;
+
+    height: 0.1rem;
+    flex: 1;
+
+    margin-left: 0.25em;
+
     background-color: var(--primary-color);
 }
 
 .skills__skill-list {
-    list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     margin: 0;
     padding: 0;
+
+    list-style: none;
 }
 
 .skills__skill-item {
     display: inline-block;
+    
     width: 10vw;
     min-width: 6rem;
+    
     padding: 1em;
 }
 

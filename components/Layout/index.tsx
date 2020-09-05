@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import './Layout.css';
+import SideNavigationView from 'components/SideNavigation';
 
 type Props = {
     title: string
@@ -11,7 +12,7 @@ const Layout: React.FC<Props> = props =>
     <div className={'layout-root'}>
         <Head>
             <title>{props.title}</title>
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="shortcut icon" href="/favicon.ico" />
             <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
         </Head>
         <header className='layout-root__header'>
@@ -30,7 +31,9 @@ const Layout: React.FC<Props> = props =>
             </div>
         </header>
         <main className='layout-root__main'>
-            {props.children}
+            <SideNavigationView>
+                {props.children}
+            </SideNavigationView>
         </main>
         <footer className='layout-root__footer'>
             <div className='sf-container layout-root__footer-text'>

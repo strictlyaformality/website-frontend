@@ -1,0 +1,105 @@
+.side-nav-view {
+    display: flex;
+    flex-direction: row;
+
+    flex: 1;
+}
+
+.side-nav-view__nav {
+    position: relative;
+    flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    z-index: 1;
+}
+
+.side-nav-view__nav::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 0.1rem;
+    background-color: var(--primary-color);
+}
+
+.side-nav-view__nav-item {
+    padding: 0 1em;
+
+    letter-spacing: 0.2ch;;
+    font-family: var(--serif-font);
+
+    color: var(--lightest-grey);
+}
+
+.side-nav-view__nav-item > a {
+    position: relative;
+    color: inherit;
+}
+
+.side-nav-view__nav-item:not(.side-nav-view__nav-item--active):hover > a::after {
+    --initial-width: 10%;
+    --scale-factor: 10;
+
+    content: '';
+    height: 0.1em;
+    width: var(--initial-width);
+    
+    background-color: var(--primary-color);
+
+    position: absolute;
+    left: calc(50% - var(--initial-width) / 2);
+    bottom: -0.25ch;
+
+    animation-name: extend-vertically;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.side-nav-view__nav-item--active > a::before {
+    --initial-height: 25%;
+    --scale-factor: 4;
+
+    content: '';
+
+    height: var(--initial-height);
+    width: 0.1em;
+
+    background-color: var(--primary-color);
+
+    position: absolute;
+    left: -0.75ch;
+    top: calc(50% - var(--initial-height) / 2);
+    
+    animation: extend-horizontally;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.side-nav-view__content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+@keyframes extend-horizontally {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(var(--scale-factor));
+    }
+}
+
+@keyframes extend-vertically {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(var(--scale-factor))
+    }
+}
