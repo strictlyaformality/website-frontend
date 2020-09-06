@@ -27,9 +27,8 @@
 }
 
 .skills__skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
     margin: 0;
     padding: 0;
@@ -38,12 +37,22 @@
 }
 
 .skills__skill-item {
+    --transition: 300ms ease-out;
+    --scale-factor: 1.1;
+
     display: inline-block;
     
     width: 10vw;
     min-width: 6rem;
     
     padding: 1em;
+
+    transition: var(--transition);
+}
+
+.skills__skill-item:hover {
+    transform: scale(var(--scale-factor), var(--scale-factor));
+    transition: var(--transition);    
 }
 
 .skills__skill-image {

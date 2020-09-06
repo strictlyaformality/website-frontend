@@ -35,10 +35,15 @@
     font-family: var(--serif-font);
 }
 
-.layout-root__brand-text {
+.layout-root__brand-text, 
+.layout-root__brand-text-abbrev {
     letter-spacing: 1ch;
     color: var(--primary-color);
     font-weight: normal;
+}
+
+.layout-root__brand-text-abbrev {
+    display: none;
 }
 
 .layout-root__main {
@@ -71,4 +76,30 @@
     margin: 0 1em;
 
     color: var(--primary-color);
+}
+
+@media (max-width: 1024px) {
+    .layout-root {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .layout-root__header {
+        position: sticky;
+        top: 0;
+        
+        z-index: 2;
+    }
+
+    .layout-root__social-links {
+        display: none;
+    }
+
+    .layout-root__main {
+        overflow: visible;
+    }
+
+    .layout-root__footer {
+        margin-top: 1em;
+    }
 }

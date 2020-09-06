@@ -1,25 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 
 import './Layout.css';
 import SideNavigationView from 'components/SideNavigation';
+import { useEventListener } from 'hooks/useEventListener';
+import { combineClassNames } from 'styles/utilities';
 
 type Props = {
     title: string
 }
 
-const Layout: React.FC<Props> = props => 
-    <div className={'layout-root'}>
+const Layout: React.FC<Props> = props => {
+    const [layoutModifier, setLayoutModifier] = useState<string>('');
+
+    useEventListener({
+        type: 'scroll',
+        handler: () => {
+            window.scrollY > 100
+                ? setLayoutModifier('layout-root--fixed-header')
+                : setLayoutModifier('');
+        },
+        // debounce: 300
+    })
+
+    return <div className={combineClassNames('layout-root', layoutModifier)}>
         <Head>
             <title>{props.title}</title>
             <link rel="shortcut icon" href="/favicon.ico" />
             <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
         </Head>
-        <header className='layout-root__header'>
+        <header className={'layout-root__header'}>
             <div className='sf-container layout-root__brand'>
                 <h1 className='layout-root__brand-text'>
                     jonny kreell
                 </h1>
+                <div className='layout-root__brand-text-abbrev'>
+                    jk
+                </div>
                 <div className='layout-root__social-links'>
                     <a href='https://www.linkedin.com/in/jonny-kreell/' target='_blank' className='layout-root__social-link'>
                         <i className='fab fa-linkedin'></i>
@@ -43,5 +60,6 @@ const Layout: React.FC<Props> = props =>
             </div>
         </footer>
     </div>
+}
 
 export default Layout;
