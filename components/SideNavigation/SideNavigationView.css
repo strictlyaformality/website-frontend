@@ -167,3 +167,9 @@
         padding-left: 7rem;
     }
 }
+
+@media (max-width: 480px) {
+    .side-nav-view__content {
+        padding-left: 4rem;
+    }
+}
