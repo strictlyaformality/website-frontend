@@ -54,9 +54,9 @@ const Layout: React.FC<Props> = props => {
         </main>
         <footer className='layout-root__footer'>
             <div className='sf-container layout-root__footer-text'>
-                2020 - {new Date().getFullYear()} 
+                2020
                 <i className='fas fa-2x fa-crow layout-root__footer-icon'></i> 
-                Jonny Kreell
+                {new Date().getFullYear()} 
             </div>
         </footer>
     </div>

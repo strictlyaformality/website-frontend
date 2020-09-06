@@ -5,6 +5,10 @@
     padding: 0 2em;
 }
 
+.skills__category {
+    --line-thickness: 0.1rem;
+}
+
 .skills__category-name {
     display: flex;
     align-items: center;
@@ -18,7 +22,7 @@
 
     display: inline-block;
 
-    height: 0.1rem;
+    height: var(--line-thickness);
     flex: 1;
 
     margin-left: 0.25em;
@@ -69,10 +73,6 @@
 }
 
 @media (max-width: 480px) {
-    .skills__skill-item {
-        min-width: 5rem;
-    }
-
     .skills__skill-list {
         grid-template-columns: repeat(2, 1fr);
     }

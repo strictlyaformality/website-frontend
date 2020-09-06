@@ -98,8 +98,4 @@
     .layout-root__main {
         overflow: visible;
     }
-
-    .layout-root__footer {
-        margin-top: 1em;
-    }
 }
