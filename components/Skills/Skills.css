@@ -1,8 +1,6 @@
 .skills {
     display: flex;
     flex-direction: column;
-    
-    padding: 0 2em;
 }
 
 .skills__category {

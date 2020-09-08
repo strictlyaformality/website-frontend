@@ -22,9 +22,19 @@
 }
 
 .layout-root__social-link {
+    --transition: 300ms ease-out;
+
     display: block;
     font-family: sans-serif;
     color: var(--primary-color);
+
+    transform-origin: center;
+    transition: var(--transition);
+}
+
+.layout-root__social-link:hover {
+    transform: scale(1.1, 1.1);
+    transition: var(--transition);
 }
 
 .layout-root__brand {

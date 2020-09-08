@@ -1,0 +1,150 @@
+.work-experience__job-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.work-experience__job-list-item {
+    --year-size: 4rem;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr;
+    align-items: center;
+}
+
+.work-experience__job-title {
+    display: inline-block;
+
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.work-experience__job-company {
+    margin-top: 0.5em;
+    grid-row: 2;
+
+    font-weight: normal;
+}
+
+.work-experience__horizontal-rule {
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    justify-self: right;
+
+    height: 0.1rem;
+    width: 90%;
+    
+    border: none;
+
+    background-color: var(--primary-color);
+}
+
+.work-experience__job-end-date {
+    --year-font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-row: 1 / 3;
+
+    height: var(--year-size);
+    width: var(--year-size);
+
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    font-size: var(--year-font-size);
+}
+
+.work-experience__job-experience-list {
+    --line-height: 1.5rem;
+
+    margin: 0;
+    padding: 1em 0;
+    padding-left: 2em;
+    
+    max-width: 75%;
+    
+    grid-column: 1 / 3;
+    align-self: flex-start;
+    
+    list-style: none;
+    line-height: var(--line-height);
+}
+
+.work-experience__job-experience-list-item {
+    display: flex;
+
+    padding-left: 1em;
+
+    border-left: 0.1em solid var(--primary-color);
+}
+
+.work-experience__job-experience-list-item + .work-experience__job-experience-list-item {
+    margin-top: 2em;
+}
+
+.work-experience__job-timeline {
+    --line-width: 0.1em;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    align-self: stretch;
+    justify-self: center;
+}
+
+.work-experience__job-timeline::after {
+    content: '';
+
+    height: 100%;
+    width: var(--line-width);
+
+    position: absolute;
+    left: calc(50% - var(--line-width) / 2);
+    
+    background-color: var(--primary-color);
+}
+
+.work-experience__job-timeline-year {
+    height: 0.5em;
+    width: 0.5em;
+
+    border-radius: 100%;
+    
+    background-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .work-experience__job-list-item {
+        --year-size: 3rem;
+    }
+
+    .work-experience__horizontal-rule {
+        display: none;
+    }
+
+    .work-experience__job-end-date {
+        --year-font-size: 0.75rem;
+
+        justify-self: flex-end;
+    }
+
+    .work-experience__job-timeline {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-experience__job-experience-list {
+        max-width: 100%;
+
+        padding-left: 1em;
+    }
+}

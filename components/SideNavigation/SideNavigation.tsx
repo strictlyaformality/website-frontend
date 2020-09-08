@@ -11,7 +11,7 @@ const SideNavigation: React.FC = props =>
                 className='side-nav-view__nav-item-icon fas fa-code'>    
             </i>
         </SideNavigationItem>
-        <SideNavigationItem href='/experience'>
+        <SideNavigationItem href='/work-experience'>
             <span className='side-nav-view__nav-item-text'>Experience</span>
             <i  title='Professional Experience'
                 className='side-nav-view__nav-item-icon fas fa-coffee'>

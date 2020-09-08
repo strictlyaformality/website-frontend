@@ -10,6 +10,7 @@
     --border-thickness: 0.1rem;
 
     position: relative;
+
     flex: 0.3;
     display: flex;
     flex-direction: column;
@@ -20,10 +21,13 @@
 
 .side-nav-view__nav::after {
     content: '';
-    position: absolute;
-    right: 0;
+    
     height: var(--border-span);
     width: var(--border-thickness);
+
+    position: absolute;
+    right: 0;
+
     background-color: var(--primary-color);
 }
 
@@ -51,22 +55,22 @@
 }
 
 .side-nav-view__nav-item:not(.side-nav-view__nav-item--active):hover > a::after {
-    --initial-width: 10%;
-    --scale-factor: 10;
-    --offset: -0.25ch;
+    --size: 0.25em;
 
     content: '';
-    height: 0.1em;
-    width: var(--initial-width);
+    height: var(--size);
+    width: var(--size);
     
     background-color: var(--primary-color);
 
-    position: absolute;
-    left: calc(50% - var(--initial-width) / 2);
-    bottom: var(--offset);
+    border-radius: 100%;
 
-    animation-name: extend-vertically;
-    animation-duration: 500ms;
+    position: absolute;
+    top: calc(50% - var(--size) / 2);
+    left: calc(-2 * var(--size));
+
+    animation-name: expand;
+    animation-duration: 300ms;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
 }
@@ -86,7 +90,7 @@
     left: -0.75ch;
     top: calc(50% - var(--initial-height) / 2);
     
-    animation: extend-horizontally;
+    animation: extend-vertically;
     animation-duration: 600ms;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
@@ -94,10 +98,13 @@
 
 .side-nav-view__content {
     flex: 1;
+
+    padding: 1em 2em;
+
     overflow-y: auto;
 }
 
-@keyframes extend-horizontally {
+@keyframes extend-vertically {
     from {
         transform: scaleY(0);
     }
@@ -107,13 +114,23 @@
     }
 }
 
-@keyframes extend-vertically {
+@keyframes extend-horizontally {
     from {
         transform: scaleX(0);
     }
 
     to {
         transform: scaleX(var(--scale-factor))
+    }
+}
+
+@keyframes expand {
+    from {
+        transform: scale(0, 0);
+    }
+
+    to {
+        transform: scale(1, 1);
     }
 }
 
