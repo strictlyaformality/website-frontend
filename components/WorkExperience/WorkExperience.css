@@ -6,9 +6,11 @@
 
 .work-experience__job-list-item {
     --year-size: 4rem;
+    --title-padding: 2rem;
+    --border-width: 0.1rem;
 
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(10%, 1fr) auto;
     grid-template-rows: auto auto 1fr;
     align-items: center;
 }
@@ -18,13 +20,20 @@
 
     font-weight: normal;
     margin-bottom: 0;
+    padding-right: var(--title-padding);
+
+    border-right: var(--border-width) solid var(--primary-color);
 }
 
 .work-experience__job-company {
-    margin-top: 0.5em;
+    margin-top: 0;
+    padding-top: 0.5em;
+    padding-right: var(--title-padding);
     grid-row: 2;
 
     font-weight: normal;
+
+    border-right: var(--border-width) solid var(--primary-color);
 }
 
 .work-experience__horizontal-rule {
@@ -34,12 +43,8 @@
     align-self: center;
     justify-self: right;
 
-    height: 0.1rem;
-    width: 90%;
-    
-    border: none;
-
-    background-color: var(--primary-color);
+    width: 100%;
+    min-width: 10%;
 }
 
 .work-experience__job-end-date {
@@ -128,6 +133,14 @@
 
     .work-experience__horizontal-rule {
         display: none;
+    }
+
+    .work-experience__job-title {
+        border-right: none;
+    }
+
+    .work-experience__job-company {
+        border-right: none;
     }
 
     .work-experience__job-end-date {

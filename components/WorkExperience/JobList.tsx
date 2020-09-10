@@ -32,7 +32,7 @@ const JobItem: React.FC<ItemProps> = props =>
     <li className='work-experience__job-list-item'>
         <h2 className='work-experience__job-title'>{props.job.title}</h2>
         <h3 className='work-experience__job-company'>{props.job.company}</h3>
-        <hr className='work-experience__horizontal-rule' />
+        <hr className='sf-hr work-experience__horizontal-rule' />
         <div className='work-experience__job-end-date'>
             {Job.getEndYear(props.job.endDate) ?? <i className='fas fa-gift fa-2x'></i>}
         </div>

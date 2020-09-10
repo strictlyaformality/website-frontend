@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 
 import './Layout.css';
-import SideNavigationView from 'components/SideNavigation';
+import SideNavigationView, { Props as SideNavigationViewProps } from 'components/SideNavigation';
 import { useEventListener } from 'hooks/useEventListener';
 import { combineClassNames } from 'styles/utilities';
 
-type Props = {
+type Props = SideNavigationViewProps & {
     title: string
 }
 
@@ -48,7 +48,7 @@ const Layout: React.FC<Props> = props => {
             </div>
         </header>
         <main className='layout-root__main'>
-            <SideNavigationView>
+            <SideNavigationView contentClassName={props.contentClassName}>
                 {props.children}
             </SideNavigationView>
         </main>

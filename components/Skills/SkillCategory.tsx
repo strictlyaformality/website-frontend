@@ -8,7 +8,10 @@ type Props = {
 
 const SkillCategory: React.FC<Props> = ({ category: { name, skills } }) => 
     <div className='skills__category'>
-        <h2 className='skills__category-name'>{name}</h2>
+        <div className='skills__category-heading'>
+            <h2 className='skills__category-name'>{name}</h2>
+            <hr className='sf-hr skills__category-heading-horizontal-rule' />
+        </div>
         <SkillList skills={skills} />
     </div>
 

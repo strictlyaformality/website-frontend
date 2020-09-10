@@ -46,6 +46,14 @@ a:hover {
     margin: 0 auto;
 }
 
+.sf-hr {
+    --rule-width: 0.1rem;
+
+    border: none;
+    background-color: var(--primary-color);
+    height: var(--rule-width);
+}
+
 @media (max-width: 1024px) {
     h1 {
         --font-size: 2rem;

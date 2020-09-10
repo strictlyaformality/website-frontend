@@ -22,7 +22,7 @@
 }
 
 .layout-root__social-link {
-    --transition: 300ms ease-out;
+    --transition: 200ms ease-out;
 
     display: block;
     font-family: sans-serif;
