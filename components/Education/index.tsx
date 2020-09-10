@@ -41,6 +41,8 @@ const EducationRow: React.FC<RowProps> = props =>
             {props.children}
         </span>
         <hr className='sf-hr education__row-horizontal-rule' />
-        <i className={`fas ${props.iconClassName} education__icon`}></i>
+        <span className='education__icon'>
+            <i className={`fas ${props.iconClassName}`}></i>
+        </span>
     </div>
 //#endregion

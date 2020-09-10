@@ -190,6 +190,14 @@
     .side-nav-view__nav-item--active .side-nav-view__nav-item-icon:hover {
         transform: none;
     }
+
+    .side-nav-view__nav-item--active > a::before {
+        display: none;
+    }
+
+    .side-nav-view__nav-item:not(.side-nav-view__nav-item--active):hover > a::after {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {

@@ -7,27 +7,37 @@ const SideNavigation: React.FC = props =>
     <aside className='side-nav-view__nav'>
         <SideNavigationItem href='/skills'>
             <span className='side-nav-view__nav-item-text'>Skills</span>
-            <i  title='Skills' 
-                className='side-nav-view__nav-item-icon fas fa-code'>    
-            </i>
+            <span className='side-nav-view__nav-item-icon'>
+                <i  title='Skills' 
+                    className='side-nav-view__nav-item-icon fas fa-code'>    
+                </i>
+            </span>
         </SideNavigationItem>
         <SideNavigationItem href='/work-experience'>
             <span className='side-nav-view__nav-item-text'>Experience</span>
-            <i  title='Professional Experience'
-                className='side-nav-view__nav-item-icon fas fa-coffee'>
-            </i>
+            <span className='side-nav-view__nav-item-icon'>
+                <i  title='Professional Experience'
+                    className='side-nav-view__nav-item-icon fas fa-coffee'>
+                </i>
+            </span>
         </SideNavigationItem>
         <SideNavigationItem href='/education'>
             <span className='side-nav-view__nav-item-text'>Education</span>
-            <i  title='Education'
-                className='side-nav-view__nav-item-icon fas fa-graduation-cap'>    
-            </i>
+            <span className='side-nav-view__nav-item-icon'>
+                <i  title='Education'
+                    className='side-nav-view__nav-item-icon fas fa-graduation-cap'>    
+                </i>
+            </span>
         </SideNavigationItem>
         <SideNavigationItem className='side-nav-view__nav-item--external' href='https://www.linkedin.com/in/jonny-kreell/' target='_blank'>
-            <i className='side-nav-view__nav-item-icon fab fa-linkedin'></i>
+            <span className='side-nav-view__nav-item-icon'>
+                <i className='side-nav-view__nav-item-icon fab fa-linkedin'></i>
+            </span>
         </SideNavigationItem>
         <SideNavigationItem className='side-nav-view__nav-item--external' href='https://github.com/strictlyaformality' target='_blank'>
-            <i className='side-nav-view__nav-item-icon fab fa-github'></i>
+            <span className='side-nav-view__nav-item-icon'>
+                <i className='fab fa-github'></i>
+            </span>
         </SideNavigationItem>
     </aside>
 
