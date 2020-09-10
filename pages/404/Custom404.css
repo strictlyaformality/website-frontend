@@ -1,0 +1,19 @@
+.custom-404-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+
+    color: var(--lightest-grey);
+}
+
+.custom-404__error {
+    font-size: 25vmin;
+}
